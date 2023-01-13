@@ -1,47 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_ui/components/profil_picture.dart';
+import 'package:twitter_ui/pages/home.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+  MyHomePage({super.key,});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int currentindex = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  late final List<Widget> _differentpages = [
+    Home()
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+      body: _differentpages[currentindex],
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.black,
+          type: BottomNavigationBarType.fixed,
+          currentIndex: currentindex,
+          onTap: _changePage,
+          items: [
+            BottomNavigationBarItem(icon: Icon((currentindex == 0) ? Icons.home : Icons.home_outlined, size: 27, color: Colors.black,), label: ''),
+            BottomNavigationBarItem(icon: Icon((currentindex == 1) ? Icons.search : Icons.search_rounded, size: 27, color: Colors.black), label: ''),
+            BottomNavigationBarItem(icon: Icon((currentindex == 2) ? Icons.people : Icons.people_alt_outlined, size: 27, color: Colors.black), label: ''),
+            BottomNavigationBarItem(icon: Icon((currentindex == 3) ? Icons.notifications : Icons.notifications_outlined, size: 27, color: Colors.black), label: ''),
+            BottomNavigationBarItem(icon: Icon((currentindex == 4) ? Icons.message : Icons.message_outlined, size: 27, color: Colors.black), label: '')
+          ]
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  void _incrementCounter() {
+    setState(() {
+    });
+  }
+
+  void _changePage(int index){
+    setState(() {
+      currentindex = index;
+    });
   }
 }
