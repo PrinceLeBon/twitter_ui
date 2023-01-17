@@ -215,77 +215,85 @@ class _User_PostState extends State<User_Post> {
               topLeft: Radius.circular(20), topRight: Radius.circular(20)),
         ),
         builder: (builder) {
-          return Container(
-            height: MediaQuery.of(context).size.height * 0.75,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(height: 20),
-                Padding(
-                    padding: EdgeInsets.only(left: 20),
-                    child: Column(
+          return /*ListView(
+            children: [*/
+              Container(
+                height: MediaQuery.of(context).size.height / 1.5,
+                child: ListView(
+                  children: [
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Partager le Tweet',
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        Container(height: 20),
+                        Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Partager le Tweet',
+                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                                ),
+                                Container(height: 20,),
+                                _recentFriends('José Mari'),
+                                Container(height: 20,),
+                                _recentFriends('Lionel Messi'),
+                                Container(height: 20,),
+                                _option1(Icons.message_outlined, 'Envoyer par Message Privé'),
+                                Container(height: 20,),
+                              ],
+                            )),
+                        Container(height: 1, color: Colors.grey,),
+                        Container(height: 20,),
+                        Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Column(
+                            children: [
+                              _option1(Icons.people, 'Partager avec la Communauté'),
+                              Container(height: 20,),
+                              Row(
+                                children: [
+                                  _option2(Icons.share, 'Partager via'),
+                                  Container(width: 20,),
+                                  _option2(Icons.bookmark_add_outlined, 'Ajouter aux signets'),
+                                  Container(width: 20,),
+                                  _option2(Icons.link, 'Copier le lien'),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                         Container(height: 20,),
-                        _recentFriends('José Mari'),
+                        Container(height: 1, color: Colors.grey,),
                         Container(height: 20,),
-                        _recentFriends('Lionel Messi'),
-                        Container(height: 20,),
-                        _option1(Icons.message_outlined, 'Envoyer par Message Privé'),
-                        Container(height: 20,),
+                        Container(
+                          height: 105,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              _option2(Icons.chat_bubble, 'WhatsApp'),
+                              Container(width: 10,),
+                              _option2(Icons.camera_alt_outlined, 'Stories Instagram'),
+                              Container(width: 10,),
+                              _option2(Icons.snapchat, 'Caméra Snapchat'),
+                              Container(width: 10,),
+                              _option2(Icons.messenger, 'Discussion Messenger'),
+                              Container(width: 10,),
+                              _option2(Icons.chat_bubble, 'Messages'),
+                              Container(width: 10,),
+                              _option2(Icons.facebook, 'Facebook'),
+                              Container(width: 10,),
+                              _option2(Icons.telegram_outlined, 'Telegram')
+                            ],
+                          ),
+                        )
                       ],
-                    )),
-                Container(height: 1, color: Colors.grey,),
-                Container(height: 20,),
-                Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Column(
-                    children: [
-                      _option1(Icons.people, 'Partager avec la Communauté'),
-                      Container(height: 20,),
-                      Row(
-                        children: [
-                          _option2(Icons.share, 'Partager via'),
-                          Container(width: 20,),
-                          _option2(Icons.bookmark_add_outlined, 'Ajouter aux signets'),
-                          Container(width: 20,),
-                          _option2(Icons.link, 'Copier le lien'),
-                        ],
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
-                Container(height: 20,),
-                Container(height: 1, color: Colors.grey,),
-                Container(height: 20,),
-                Container(
-                  height: 105,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      _option2(Icons.chat_bubble, 'WhatsApp'),
-                      Container(width: 10,),
-                      _option2(Icons.camera_alt_outlined, 'Stories Instagram'),
-                      Container(width: 10,),
-                      _option2(Icons.snapchat, 'Caméra Snapchat'),
-                      Container(width: 10,),
-                      _option2(Icons.messenger, 'Discussion Messenger'),
-                      Container(width: 10,),
-                      _option2(Icons.chat_bubble, 'Messages'),
-                      Container(width: 10,),
-                      _option2(Icons.facebook, 'Facebook'),
-                      Container(width: 10,),
-                      _option2(Icons.telegram_outlined, 'Telegram')
-                    ],
-                  ),
-                )
-              ],
-            ),
-          );
+              )
+            /*],
+          )*/;
         });
   }
 
