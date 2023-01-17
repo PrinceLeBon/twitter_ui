@@ -1,4 +1,4 @@
-#Fri Jan 13 13:52:11 WAT 2023
+#Tue Jan 17 12:02:34 WAT 2023
 base.0=/home/phantom/StudioProjects/twitter_ui/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

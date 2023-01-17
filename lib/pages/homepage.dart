@@ -13,7 +13,12 @@ class _MyHomePageState extends State<MyHomePage> {
   int currentindex = 0;
 
   late final List<Widget> _differentpages = [
-    Home()
+    Home(),
+    Home(),
+    Home(),
+    Home(),
+    Home(),
+
   ];
 
   @override
